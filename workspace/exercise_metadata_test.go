@@ -2,6 +2,7 @@ package workspace
 
 import (
 	"os"
+	"path/filepath"
 	"testing"
 	"time"
 
@@ -144,4 +145,39 @@ func TestExerciseMetadataString(t *testing.T) {
 			assert.Equal(t, tc.desc, tc.metadata.String())
 		})
 	}
+}
+
+func TestExerciseMetadataFilePermissions(t *testing.T) {
+	dir, err := os.MkdirTemp("", "solution")
+	assert.NoError(t, err)
+	defer os.RemoveAll(dir)
+
+	em := &ExerciseMetadata{
+		Track:        "a-track",
+		ExerciseSlug: "bogus-exercise",
+		ID:           "abc",
+		URL:          "http://example.com",
+		Handle:       "alice",
+		IsRequester:  true,
+		Dir:          dir,
+	}
+	
+	err = em.Write(dir)
+	assert.NoError(t, err)
+
+	// Check the metadata file permissions
+	metadataPath := filepath.Join(dir, ".exercism", "metadata.json")
+	info, err := os.Stat(metadataPath)
+	assert.NoError(t, err)
+	
+	// The file should have 0600 permissions (user read/write only)
+	assert.Equal(t, os.FileMode(0600), info.Mode().Perm(), "Metadata file should have 0600 permissions")
+	
+	// Check the .exercism directory permissions
+	exercismDir := filepath.Join(dir, ".exercism")
+	dirInfo, err := os.Stat(exercismDir)
+	assert.NoError(t, err)
+	
+	// The directory should have 0755 permissions
+	assert.Equal(t, os.FileMode(0755), dirInfo.Mode().Perm(), ".exercism directory should have 0755 permissions")
 }
