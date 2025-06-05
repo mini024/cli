@@ -7,12 +7,16 @@ We will use this exercism cli and the exercises in exercism.org to
 use some of these tools. 
 
 ## Setup
+Follow the instructions in [CONTRIBUTING.md](../CONTRIBUTING.md) to set up the project.
 
-During this workshop we will be using Exercism, to do so you need to:
-    1. Create an account in exercism.org 
-    2. Get your account token (keep it handy)
-    3. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
-    4. Run ./testercism configure --token=YOUR_TOKEN
+During this workshop we will be using Exercism to test hte workflows, to do so you need to:
+1. Create an account in exercism.org 
+3. Get your account token (keep it handy)
+4. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
+5. Run ./testercism configure --token=YOUR_TOKEN
+
+> [!IMPORTANT]
+> Use *./testercism* to run the commands and test your changes. 
 
 ## Activities
 
@@ -54,11 +58,15 @@ url in the metadata file and open it.
 4. Update the command to use ./testercise instead of exercism
 5. Download the exercise
 
-## Part 4: Implement the tests for open command
-
-We want to make sure the open command works as expected, create open_test.go. 
-
-## Part 5: Compare
+## Part 4: Compare
 
 The Open command is an existing command in main. Compare your solution
 with the implemented one, what is different? 
+
+## Part 5: Implement the tests for open command
+
+We want to make sure the open command works as expected, implement some tests for the command. 
+
+## Part 6: Challenge
+
+Go to Exercism.org and find a path that you are interested in and solve some challenges using Cursor!
