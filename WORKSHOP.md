@@ -8,31 +8,20 @@ use some of these tools.
 
 ## Setup
 
-Follow the instructions in [CONTRIBUTING.md](../CONTRIBUTING.md) to set up the project.
+> [!IMPORTANT]
+> Use Cursor to help with the setup.
 
-<<<<<<< HEAD
-During this workshop we will be using Exercism to test hte workflows, to do so you need to:
+During this workshop we will be using Exercism to test the workflows, to do so you need to:
 
 1. Create an account in exercism.org
 2. Get your account token (keep it handy)
+   Profile -> Settings -> API / CLI -> API/CLI Token
+
 3. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
 4. Run ./testercism configure --token=YOUR_TOKEN
 
 > [!IMPORTANT]
 > Use _./testercism_ to run the commands and test your changes.
-> =======
-> During this workshop we will be using Exercism, to do so you need to:
-
-1. Create an account in exercism.org
-2. Get your account token (keep it handy)
-3. Sign up for a language track online
-4. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
-5. Run `./testercism configure --token=YOUR_TOKEN`
-
-**Note**
-Cursor might suggest installing the command-line client. How can we ensure it uses this local version of the CLI?
-
-> > > > > > > 29d4454 (updating readme with formatting, isntructions;)
 
 ## Activities
 
@@ -80,4 +69,10 @@ url in the metadata file and open it.
 The Open command is an existing command in main. Compare your solution
 with the implemented one, what is different?
 
-We want to make sure the open command works as expected, write a test open_test.go.
+## Part 5: Implement the tests for open command
+
+We want to make sure the open command works as expected, implement some tests for the command.
+
+## Part 6: Challenge
+
+Go to Exercism.org and find a path that you are interested in and solve some challenges using Cursor!
