@@ -16,7 +16,7 @@ During this workshop we will be using Exercism to test the workflows, to do so y
 1. Create an account in exercism.org
 2. Get your account token (keep it handy)
    Profile -> Settings -> API / CLI -> API/CLI Token
-3. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
+3. Follow [these instructions](https://github.com/mini024/cli/blob/ewit/workshop/CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
 4. Run ./testercism configure --token=YOUR_TOKEN
 
 > [!IMPORTANT]
