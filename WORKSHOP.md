@@ -16,65 +16,66 @@ During this workshop we will be using Exercism to test the workflows, to do so y
 1. Create an account in exercism.org
 2. Get your account token (keep it handy)
    Profile -> Settings -> API / CLI -> API/CLI Token
-
 3. Follow [these instructions](../CONTRIBUTING.md#manual-testing-against-exercism) to set up manual testing
 4. Run ./testercism configure --token=YOUR_TOKEN
 
 > [!IMPORTANT]
 > Use _./testercism_ to run the commands and test your changes.
 
-> Note: there is no need to push these changes.
-
 ## Activities
 
-## Part 1: Understand the Code
+## Activity 1: Understand the Code
 
 Explore the different commands that the exercism cli has to facilitate
 submiting exercises to the website.
 
-1. What is the order in which the commands are used?
-2. What happens when you submit an exercise?
-3. How does it link a submission to a solution?
+1. What languages does the code base use? Does it use a specific testing library?
+2. What does the download command do? What attributes does it need? 
+3. How do you run the tests for a command? Are any tests currently failing? 
 
-## Part 2: Remove a Command
+## Activity 2: Remove a Command
 
-We have decide to remove the prepare command because it is not
-really useful. Create a branch and remove the required code so this command is
+We have decide to remove the prepare command because maintances is high and usage
+is low. Create a branch and remove the required code so this command is
 not available anymore.
 
-How do we confirm that the command was removed correctly?
+If you try to run the command what happens? 
+How do we confirm that the command was removed correctly? 
 
-## Part 3: Implement a feature
+> Note: there is no need to push these changes.
+
+## Activity 3: Implement a feature
 
 Define a clear set of requirements and using Cursor implement the following feature.
 
+### Feature
 We want to implement a command "open" that will open the url to an exercise.
 
-When you select an exercise to work on you can use the download command to
-pull the repo where the solution can be implemented. This repo contains a
-.exercism/metadate.json file that has the URL where the exercise can be
-found on the website.
-
+### Design
 This command will take the exercise directory as an argument, find the
 url in the metadata file and open it.
 
 ### Downloading an Exercise
+To try downloading an exercise and seeing the structure of the directory:
+1. Got to https://exercism.org/tracks
+2. Select and join a track you would like to explore
+3. Choose an exercise
+4. Find the "Work Locally (CLI)" section on the left and get the track and exercise.
+5. Download the exercise using `./testercism download --track= --exercise=`
 
-1. Go to exercism.org
-2. Select a Track and chose an exercise
-3. Find the "Work locally option"
-4. Update the command to use ./testercise instead of exercism
-5. Download the exercise
+After you download the project you can explore what it contains and use this
+to get the information needed to open the url. 
 
-## Part 4: Compare
+## Activity 3.2: Compare
 
-The Open command is an existing command in main. Compare your solution
-with the implemented one, what is different?
+The Open command is an [existing command](https://github.com/exercism/cli/blob/main/cmd/open.go) in the main branch. 
 
-## Part 5: Implement the tests for open command
+Compare your solution with the implemented one, does the code look different? 
+
+## Activity 3.3: Implement the tests for open command
 
 We want to make sure the open command works as expected, implement some tests for the command.
 
-## Part 6: Challenge
+## Challenge
 
 Go to Exercism.org and find a path that you are interested in and solve some challenges using Cursor!
